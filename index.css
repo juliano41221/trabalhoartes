@@ -37,9 +37,13 @@ header {
   color: inherit;
 }
 
+.obra a {
+  width: 50%;
+  height: 50%;
+}
 .obra img {
   width: 50%;
-  height: 200px;
+  height: 50%;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s;
