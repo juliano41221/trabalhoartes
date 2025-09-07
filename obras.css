@@ -1,82 +1,185 @@
 /* Reset básico */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: #202020;
-  color: #f0f0f0;
-  text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #1c1f24; /* fundo refinado */
+    color: #f5f5f5;
+    text-align: center;
 }
 
 header {
-  background: linear-gradient(135deg, #FF6347, #3CB371);
-  color: #fff;
-  padding: 20px;
+    background: linear-gradient(135deg, #222831, #2f3640);
+    color: #fff;
+    padding: 40px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.4em;
+    opacity: 0.9;
+    letter-spacing: 2px;
 }
 
 main {
-  flex: 1;
-  padding: 20px;
+    flex: 1;
+    padding: 20px;
+}
+.tema, .obra, .detalhe-obra {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+                filter 1.2s ease-out;
 }
 
-/* Estilos para a seção de detalhes da obra */
+.tema.visible, .obra.visible, .detalhe-obra.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+.obra.visible img {
+    transform: scale(1);
+    transition: transform 1.2s ease;
+}
+.obra img {
+    transform: scale(0.97);
+}
 .detalhe-obra {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #333;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #25282d, #2f3238);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.detalhe-obra.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .detalhe-obra img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .detalhe-obra h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #222;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #4fa3a5; /* azul petróleo */
+    font-weight: 400;
 }
 
 .detalhe-obra p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  text-align: left;
-  margin-bottom: 10px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #bbbbbb;
+}
+
+.detalhe-obra strong {
+    color: #f0f0f0;
 }
 
 .detalhe-obra a {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 15px;
-  background: #222;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #4fa3a5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s, transform 0.3s ease;
 }
 
 .detalhe-obra a:hover {
-  background: #555;
+    background: #6fbfc0;
+    transform: scale(1.05);
 }
 
 footer {
-  background: #001f3f;
-  color: #f0f0f0;
-  padding: 15px;
-  margin-top: auto;
+    background: #101010;
+    color: #f0f0f0;
+    padding: 20px;
+    margin-top: auto;
+}
+/* Efeitos extras para animacoes.js */
+.fade-left { transform: translateX(-30px); }
+.fade-right { transform: translateX(30px); }
+.zoom-in { transform: scale(0.9); }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .tema img {
+        height: 200px; /* reduz altura */
+    }
+
+    .obra img {
+        height: 160px;
+    }
+
+    .texto-introducao {
+        padding: 20px;
+        font-size: 1em;
+    }
+
+    .secao h2 {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .tema h2 {
+        font-size: 1.4rem;
+    }
+
+    .obra h3 {
+        font-size: 1.1rem;
+    }
+
+    .galeria-temas, .galeria {
+        grid-template-columns: 1fr; /* força uma coluna em telas bem pequenas */
+    }
 }
