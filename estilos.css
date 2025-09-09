@@ -211,6 +211,33 @@ body, main {
   max-width: 100vw;
   overflow-x: hidden;
 }
+/* Scrollbar personalizada para navegadores baseados em WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E1E2F;
+}
+
+::-webkit-scrollbar-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4ECDC4 #1E1E2F;
+}
+::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+/* Responsividade */
 @media (max-width: 768px) {
   .tema h2 {
     font-size: 1.6rem;
