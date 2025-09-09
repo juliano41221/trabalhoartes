@@ -13,7 +13,10 @@
     <h1>Arquitetura Modernista</h1>
   </header>
 <nav class="menu">
-  <ul>
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+  <ul id="menu-list">
     <li><a href="index.html">Início</a></li>
     <li><a href="entre-duas-guerras.html">Entre Guerras</a></li>
     <li><a href="artistas-modernos-brasil.html">Modernismo Brasileiro</a></li>
@@ -62,5 +65,13 @@
   <footer>
     <p>© Direitos Reservados - CFNP-Blumenau</p>
   </footer>
+  <script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu-list');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
