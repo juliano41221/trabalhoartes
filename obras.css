@@ -20,9 +20,10 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, #FF6347, #3CB371);
-  color: #fff;
+  background: linear-gradient(350deg, #d33021, #2ab12f);
+  color: #ffffff;
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 main {
@@ -32,58 +33,73 @@ main {
 
 /* Estilos para a seção de detalhes da obra */
 .detalhe-obra {
-  max-width: 800px;
+  max-width: 900px;
   margin: 40px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   color: #333;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 40px;
+  align-items: start;
 }
-
+.imagem-obra img {
+  width: 100%;
+  border-radius: 10px;
+}
+.info-obra {
+  text-align: left;
+}
 .detalhe-obra img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
   margin-bottom: 20px;
 }
-
+.detalhe-obra img:hover {
+  transform: scale(1.02);
+}
 .detalhe-obra h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+   margin-bottom: 15px;
   color: #222;
+  font-weight: 700;
 }
 
 .detalhe-obra p {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.8;
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: #444;
 }
 
 .detalhe-obra a {
   display: inline-block;
   margin-top: 20px;
-  padding: 10px 15px;
-  background: #222;
-  color: #fff;
+  padding: 12px 20px;
+  background: #A5D6A7;
+  color: #1E1E2F;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 6px;
   transition: background 0.3s;
+  font-weight: bold;
 }
 
 .detalhe-obra a:hover {
-  background: #555;
+  background: #81C784;
 }
 
 footer {
-  background: #001f3f;
+  background: #1E1E2F;
   color: #f0f0f0;
-  padding: 15px;
+  padding: 20px;
   margin-top: auto;
+  font-size: 0.9rem;
 }
 .menu {
   background: #111;
@@ -116,5 +132,6 @@ footer {
   }
   .detalhe-obra {
     grid-template-columns: 1fr;
+    padding: 20px;
   }
 }
