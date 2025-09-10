@@ -45,7 +45,7 @@ header {
 .conteudo-header {
   position: absolute;
   top: 50%;
-  left: 60%;
+  left: 50%;
   transform: translate(-50%, -50%);
   color: #000000;
   text-align: center;
@@ -58,7 +58,6 @@ header p {
   text-shadow: 2px 4px 6px rgba(255, 255, 255, 0.9);
 }
 header::before {
-  content: '';
   position: absolute;
   top: -50px;
   left: -50px;
